@@ -1,0 +1,151 @@
+$font-size: 15px;
+$fw-normal: 400;
+$fw-bold: 700;
+
+$white: hsl(0, 0%, 100%);
+$orange: hsl(25, 97%, 53%);
+$light-gray: hsl(217, 12%, 63%);
+$medium-gray: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$vdark-blue: hsl(216, 12%, 8%);
+
+html {
+    font-size: $font-size;
+}
+
+body {
+    background-color: $vdark-blue;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+
+    main {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+h5 {
+    padding: 0;
+    margin: 0;
+}
+
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    color: $medium-gray;
+}
+
+input[type="radio"] + label {
+    color: $medium-gray;
+}
+
+.card {
+    color: $white;
+    background: linear-gradient(darken($dark-blue, 3%), lighten($vdark-blue, 4%));
+    border-radius: 1rem;
+    max-width: 30rem;
+
+    &__inner {
+        padding: 2rem;
+    }
+
+    .ratings-group {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 1rem 0;
+    }
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+    color: $white;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+form {
+    label[for^="rating-"] {
+        --size: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        background-color: $dark-blue;
+    }
+
+    label[for] {
+        margin: 2px;
+    }
+
+    label[for]:focus {
+        outline: none;
+    }
+
+    input[type="radio"]:not(:checked) + label[for]:focus {
+        outline: 2px dashed $orange;
+    }
+
+    input[type="radio"] {
+        display: none;
+
+        &:checked + label[for] {
+            color: $white;
+            outline: 2px solid $orange;
+        }
+
+        &:active + label[for] {
+            color: $vdark-blue;
+            background-color: lighten($orange, 5%);
+        }
+    }
+
+    button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background-color: $orange;
+        border: none;
+        border-radius: 2rem;
+
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+}
